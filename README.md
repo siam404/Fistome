@@ -14,6 +14,24 @@ A customizable new tab page with uncopiable content for Firefox.
 - Easy-to-use edit mode for adding, removing, and modifying icons
 - Keyboard shortcuts for quick access to features
 
+## Preview
+
+![Image](https://github.com/user-attachments/assets/19ee3fc3-0b27-41e0-b684-ae4ca881644c)
+
+![Image](https://github.com/user-attachments/assets/6db37cfb-2e5e-403e-a419-3d4cfeef3320) 
+
+![Image](https://github.com/user-attachments/assets/e07c8199-658d-41b1-b867-81b734c63e82)
+
+![Image](https://github.com/user-attachments/assets/807078d8-6969-4590-8ba5-186282bcbc84)
+
+![Image](https://github.com/user-attachments/assets/20e9b71d-db1e-493b-b250-74d9e1adab63)
+
+![Image](https://github.com/user-attachments/assets/657ea7c5-4286-4626-9dfa-9441c75269df)
+
+![Image](https://github.com/user-attachments/assets/d6027b2f-06b1-4cf4-b970-eef1aba2542d)
+
+
+
 ## Installation
 
 ### Temporary Installation (for testing)
