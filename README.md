@@ -15,10 +15,13 @@ A customizable new tab page with uncopiable content for Firefox.
 - Keyboard shortcuts for quick access to features
 
 ## Preview
-
-<img src="https://github.com/user-attachments/assets/92a260b8-11c4-4deb-82a3-b1ba10453bdd" alt="Image 1" width="400">
-<img src="https://github.com/user-attachments/assets/6db37cfb-2e5e-403e-a419-3d4cfeef3320" alt="Image 2" width="400">
 <img src="https://github.com/user-attachments/assets/19ee3fc3-0b27-41e0-b684-ae4ca881644c" alt="Image 3" width="400">
+<img src="https://github.com/user-attachments/assets/92a260b8-11c4-4deb-82a3-b1ba10453bdd" alt="Image 1" width="400">
+
+
+<img src="https://github.com/user-attachments/assets/607585cb-e946-4e14-96b0-a939c317d958" alt="Image 9" width="400">
+<img src="https://github.com/user-attachments/assets/454f9819-b1c2-4748-8526-5c8af759653c" alt="Image 10" width="400">
+<img src="https://github.com/user-attachments/assets/6db37cfb-2e5e-403e-a419-3d4cfeef3320" alt="Image 2" width="400">
 <img src="https://github.com/user-attachments/assets/e07c8199-658d-41b1-b867-81b734c63e82" alt="Image 4" width="400">
 <img src="https://github.com/user-attachments/assets/807078d8-6969-4590-8ba5-186282bcbc84" alt="Image 5" width="400">
 <img src="https://github.com/user-attachments/assets/20e9b71d-db1e-493b-b250-74d9e1adab63" alt="Image 6" width="400">
