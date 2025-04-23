@@ -2,6 +2,8 @@
 
 A customizable new tab page with uncopiable content for Firefox.
 
+![Image](https://github.com/user-attachments/assets/ae0269b8-5bb0-406d-8318-ccb89a5a7d03)
+
 ## Features
 
 - Customizable icons and links
