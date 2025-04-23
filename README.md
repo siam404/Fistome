@@ -1,6 +1,6 @@
-# Custom New Tab Firefox Extension
+# FISTOME
 
-A customizable new tab page with uncopiable content for Firefox.
+A customizable Extension- smooth, minimalistic, clean and with some built-in feature, only for Firefox and Librewolf.
 
 <img src="https://github.com/user-attachments/assets/ae0269b8-5bb0-406d-8318-ccb89a5a7d03" alt="Image 1" width="400">
 
