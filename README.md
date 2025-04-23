@@ -2,7 +2,7 @@
 
 A customizable new tab page with uncopiable content for Firefox.
 
-![Image](https://github.com/user-attachments/assets/ae0269b8-5bb0-406d-8318-ccb89a5a7d03)
+<img src="https://github.com/user-attachments/assets/ae0269b8-5bb0-406d-8318-ccb89a5a7d03" alt="Image 1" width="400">
 
 ## Features
 
@@ -16,19 +16,14 @@ A customizable new tab page with uncopiable content for Firefox.
 
 ## Preview
 
-![Image](https://github.com/user-attachments/assets/19ee3fc3-0b27-41e0-b684-ae4ca881644c)
-
-![Image](https://github.com/user-attachments/assets/6db37cfb-2e5e-403e-a419-3d4cfeef3320) 
-
-![Image](https://github.com/user-attachments/assets/e07c8199-658d-41b1-b867-81b734c63e82)
-
-![Image](https://github.com/user-attachments/assets/807078d8-6969-4590-8ba5-186282bcbc84)
-
-![Image](https://github.com/user-attachments/assets/20e9b71d-db1e-493b-b250-74d9e1adab63)
-
-![Image](https://github.com/user-attachments/assets/657ea7c5-4286-4626-9dfa-9441c75269df)
-
-![Image](https://github.com/user-attachments/assets/d6027b2f-06b1-4cf4-b970-eef1aba2542d)
+<img src="https://github.com/user-attachments/assets/92a260b8-11c4-4deb-82a3-b1ba10453bdd" alt="Image 1" width="400">
+<img src="https://github.com/user-attachments/assets/6db37cfb-2e5e-403e-a419-3d4cfeef3320" alt="Image 2" width="400">
+<img src="https://github.com/user-attachments/assets/19ee3fc3-0b27-41e0-b684-ae4ca881644c" alt="Image 3" width="400">
+<img src="https://github.com/user-attachments/assets/e07c8199-658d-41b1-b867-81b734c63e82" alt="Image 4" width="400">
+<img src="https://github.com/user-attachments/assets/807078d8-6969-4590-8ba5-186282bcbc84" alt="Image 5" width="400">
+<img src="https://github.com/user-attachments/assets/20e9b71d-db1e-493b-b250-74d9e1adab63" alt="Image 6" width="400">
+<img src="https://github.com/user-attachments/assets/657ea7c5-4286-4626-9dfa-9441c75269df" alt="Image 7" width="400">
+<img src="https://github.com/user-attachments/assets/d6027b2f-06b1-4cf4-b970-eef1aba2542d" alt="Image 8" width="400">
 
 
 
