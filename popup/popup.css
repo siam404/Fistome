@@ -1,0 +1,209 @@
+/* Import font */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #1a2b22; /* Dark green background */
+  color: #e0e0e0;
+  width: 300px;
+  height: 360px;
+  overflow: hidden;
+}
+
+/* Main popup container */
+.popup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+/* Logo styles */
+.logo-container {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Extension name styles */
+.extension-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50; /* Green color */
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Author styles */
+.author {
+  font-size: 14px;
+  color: #88aa88;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+/* Options styles */
+.options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2a3b32; /* Slightly lighter than background */
+  color: #4CAF50;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.option-btn:hover {
+  background-color: #3a4b42;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Version styles */
+.version {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 12px;
+  color: #6a7a72;
+  background-color: #243028;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Help overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a2b22;
+  z-index: 10;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.overlay-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #3a4b42;
+}
+
+.overlay-header h2 {
+  font-size: 18px;
+  color: #4CAF50;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #88aa88;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #4CAF50;
+}
+
+.overlay-body {
+  flex: 1;
+}
+
+.overlay-body h3 {
+  color: #4CAF50;
+  margin: 15px 0 8px;
+  font-size: 16px;
+}
+
+.overlay-body p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #d0d0d0;
+  line-height: 1.4;
+}
+
+.icon-description {
+  color: #88aa88;
+  font-style: italic;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #243028;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4CAF50;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d8c40;
+} 

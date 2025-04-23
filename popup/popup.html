@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fistome</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="../icons/icon-96.png" alt="Fistome Logo" class="logo">
+    </div>
+    
+    <!-- Extension Name -->
+    <h1 class="extension-name">Fistome</h1>
+    
+    <!-- Author Name -->
+    <p class="author">by Sam Ahmed</p>
+    
+    <!-- Options -->
+    <div class="options">
+      <button id="github-btn" class="option-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+        GitHub
+      </button>
+      <button id="help-btn" class="option-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        Help
+      </button>
+    </div>
+    
+    <!-- Version -->
+    <div class="version">
+      <span>v1.0</span>
+    </div>
+  </div>
+  
+  <!-- Help Overlay -->
+  <div id="help-overlay" class="overlay">
+    <div class="overlay-content">
+      <div class="overlay-header">
+        <h2>How to use Fistome</h2>
+        <button id="close-help" class="close-btn">&times;</button>
+      </div>
+      <div class="overlay-body">
+        <h3>Customizing Your New Tab</h3>
+        <p>1. Click the edit button <span class="icon-description">(pencil icon)</span> in the bottom right corner.</p>
+        <p>2. Use the + button to add new icons.</p>
+        <p>3. Click on existing icons to edit or remove them.</p>
+        <p>4. Click the theme button to change the look and feel.</p>
+        
+        <h3>Themes</h3>
+        <p>Click the theme button <span class="icon-description">(palette icon)</span> to select from 20 beautiful themes.</p>
+        
+        <h3>Icons</h3>
+        <p>You can organize your icons into three rows. Each icon can be customized with your own image.</p>
+        
+        <h3>Content Protection</h3>
+        <p>All content on your new tab page is protected against copying.</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 

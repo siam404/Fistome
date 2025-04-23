@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Tab</title>
+  <!-- Link to our external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Anti-copy script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // Disable keyboard shortcuts for copy/paste
+      document.addEventListener('keydown', function(e) {
+        // Ctrl+C, Ctrl+X, Ctrl+V, F12
+        if ((e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'v')) || e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // Prevent drag and selection behaviors
+      document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // Disable copy
+      document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // Disable cut
+      document.addEventListener('cut', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // Disable paste
+      document.addEventListener('paste', function(e) {
+        e.preventDefault();
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Top Info Bar with Date/Time -->
+  <div class="top-info-bar">
+    <div class="datetime-container">
+      <span id="date-time">Wednesday, April 23 at 06:51 AM</span>
+    </div>
+  </div>
+  
+  <h1 id="greeting">Welcome!</h1>
+  
+  <!-- A real Startpage search form -->
+  <form class="search-form" id="search-form" action="https://www.google.com/search" method="GET" target="_self">
+    <div class="search-container">
+      <input 
+        type="text" 
+        name="q" 
+        id="search-input"
+        placeholder="Search the web..." 
+        aria-label="Search the web"
+      />
+      <div class="search-engine-selector">
+        <button type="button" id="search-engine-toggle" class="search-engine-toggle">
+          <img src="icons/google.png" id="current-search-engine-icon" alt="Google">
+          <span>▼</span>
+        </button>
+        <div class="search-engine-dropdown" id="search-engine-dropdown">
+          <div class="search-engine-option" data-engine="google" data-action="https://www.google.com/search" data-param="q">
+            <img src="icons/google.png" alt="Google">
+            <span>Google</span>
+          </div>
+          <div class="search-engine-option" data-engine="bing" data-action="https://www.bing.com/search" data-param="q">
+            <img src="icons/bing.png" alt="Bing">
+            <span>Bing</span>
+          </div>
+          <div class="search-engine-option" data-engine="duckduckgo" data-action="https://duckduckgo.com/" data-param="q">
+            <img src="icons/duck.png" alt="DuckDuckGo">
+            <span>DuckDuckGo</span>
+          </div>
+          <div class="search-engine-option" data-engine="brave" data-action="https://search.brave.com/search" data-param="q">
+            <img src="icons/brave.png" alt="Brave">
+            <span>Brave</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Icon links row (Top Section) -->
+  <div class="icon-links">
+    <a href="https://youtube.com" target="_self" class="icon-container">
+      <img src="icons/youtube.png" alt="YouTube">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://reddit.com" target="_self" class="icon-container">
+      <img src="icons/reddit.png" alt="Reddit">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://github.com" target="_self" class="icon-container">
+      <img src="icons/github.png" alt="GitHub">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://monkeytype.com/" target="_self" class="icon-container">
+      <img src="icons/type.png" alt="Monkeytype">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://web.whatsapp.com/" target="_self" class="icon-container">
+      <img src="icons/whatsapp.png" alt="WhatsApp">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://mail.google.com/mail/u/0/#inbox" target="_self" class="icon-container">
+      <img src="icons/gmail.png" alt="Gmail">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+  </div>
+
+  <!-- Middle row of icons -->
+  <div class="icon-links-middle">
+    <a href="https://www.pinterest.com/" target="_self" class="icon-container">
+      <img src="icons/pinterest.png" alt="Pinterest">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://facebook.com" target="_self" class="icon-container">
+      <img src="icons/facebook.png" alt="Facebook">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/" target="_self" class="icon-container">
+      <img src="icons/instagram.png" alt="Instagram">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+    <a href="https://music.youtube.com/" target="_self" class="icon-container">
+      <img src="icons/music.png" alt="YouTube Music">
+      <div class="icon-edit-menu">
+        <button class="remove-icon">Remove</button>
+        <button class="edit-icon">Edit</button>
+      </div>
+    </a>
+  </div>
+
+  <!-- Bottom row of icons (now empty) -->
+  <div class="icon-links1">
+    <!-- This row starts empty and can be populated by users -->
+  </div>
+
+  <!-- Edit button in the bottom right -->
+  <button id="edit-toggle" class="edit-toggle control-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+    </svg>
+  </button>
+
+  <!-- Add icon button (initially hidden) -->
+  <button id="add-icon" class="add-icon control-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  </button>
+
+  <!-- Theme selector button (replaces theme toggle) -->
+  <button id="theme-toggle" class="theme-toggle control-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="8" cy="8" r="2" fill="currentColor"></circle>
+      <circle cx="16" cy="8" r="2" fill="currentColor"></circle>
+      <circle cx="16" cy="16" r="2" fill="currentColor"></circle>
+      <circle cx="8" cy="16" r="2" fill="currentColor"></circle>
+    </svg>
+  </button>
+
+  <!-- Theme selection modal -->
+  <div id="theme-modal" class="modal">
+    <div class="modal-content theme-modal-content">
+      <span class="close-modal" id="close-theme-modal">&times;</span>
+      <h2>Select Theme</h2>
+      <div class="theme-grid">
+        <!-- Theme options will be added by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing/adding icons -->
+  <div id="icon-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-icon-modal">&times;</span>
+      <h2 id="modal-title">Edit Icon</h2>
+      <form id="icon-form">
+        <div class="form-group">
+          <label for="icon-title">Title:</label>
+          <input type="text" id="icon-title" placeholder="(Optional)">
+        </div>
+        <div class="form-group">
+          <label for="icon-url">URL:</label>
+          <input type="url" id="icon-url" required placeholder="https://example.com">
+        </div>
+        <div class="form-group">
+          <label for="icon-upload">Upload Icon:</label>
+          <div class="upload-container">
+            <input type="file" id="icon-upload" accept="image/*">
+            <a href="https://www.flaticon.com" target="_self" class="get-icon-btn">Get Icon</a>
+          </div>
+          <div class="upload-note">Recommended: Square images of at least 65x65px</div>
+        </div>
+        <div class="form-group">
+          <label for="icon-row">Row:</label>
+          <select id="icon-row">
+            <option value="icon-links">Top Row</option>
+            <option value="icon-links-middle">Middle Row</option>
+            <option value="icon-links1">Bottom Row</option>
+          </select>
+        </div>
+        <div class="upload-note1">Note: You can add only 8 shortcuts per row.</div>
+        <button type="submit" class="save-icon">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification toast -->
+  <div id="notification" class="notification">
+    <span id="notification-message"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 

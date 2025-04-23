@@ -1,0 +1,1830 @@
+/* 
+ * style.css 
+ * Dark-themed new tab page styling with larger icons and warmer colors.
+ */
+
+/* Hide scrollbars and prevent scrolling */
+html, body {
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Prevent copying and text selection throughout the page */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+/* Prevent right-click context menu */
+body {
+  oncontextmenu: "return false";
+}
+
+/* Override default image drag behavior */
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
+}
+
+/* Top Info Bar */
+.top-info-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px 15px;
+  z-index: 10;
+  text-align: left;
+}
+
+.datetime-container {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2); /* Very transparent background */
+  backdrop-filter: blur(10px); /* Increased blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.datetime-container:hover {
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly more visible on hover but still transparent */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#date-time {
+  font-size: 0.8rem;
+  color: #F5C78C;
+  font-weight: bold;
+  opacity: 1;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.datetime-container:hover #date-time {
+  color: #d8a970;
+  opacity: 0.9;
+}
+
+/* Light Theme Styles for Top Info Bar */
+body.light-theme .datetime-container {
+  background-color: rgba(255, 255, 255, 0.15); /* Very transparent white for light theme */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .datetime-container:hover {
+  background-color: rgba(255, 255, 255, 0.25); /* Slightly more visible on hover */
+}
+
+body.light-theme #date-time {
+  color: #333;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .datetime-container:hover #date-time {
+  color: #111;
+}
+
+.settings-container {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.weather-settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.weather-settings-btn:hover {
+  opacity: 1;
+}
+
+/* Light Theme Styles for Top Info Bar */
+body.light-theme .top-info-bar,
+body.light-theme .top-line,
+body.light-theme .bottom-line,
+body.light-theme #date-time,
+body.light-theme #weather-location, 
+body.light-theme #weather-desc {
+  color: #666;
+}
+
+body.light-theme #weather-temp {
+  color: #333;
+}
+
+/* Hide href display in edit mode */
+.edit-mode .icon-container {
+  pointer-events: auto;
+  cursor: default;
+  text-decoration: none;
+}
+
+.edit-mode .icon-container img {
+  pointer-events: none;
+}
+
+.edit-mode .icon-edit-menu {
+  pointer-events: auto;
+}
+
+/* Ensure the status bar is clear from URLs in edit mode */
+.edit-mode a.icon-container {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Page Layout & Background */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Then apply the font in your rules */
+body {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700; /* ensures text is displayed in bold weight */
+  background: #282828; /* Very dark background */
+  color: #F5C78C;      /* Warm tan text color */
+  margin: 0;
+  padding: 45px 0 0 0; /* Adjusted padding for the smaller top info bar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* "Welcome!" Heading */
+h1 {
+  font-size: 3rem;             /* Bigger text size */
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  color: #f5ca8c;
+}
+
+/* Search Form Container */
+.search-form {
+  margin-bottom: -1rem;
+}
+
+/* Search Box Input */
+.search-form input {
+  width: 190px;
+  max-width: 90vw;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  background-color: #2F2F2F; /* Dark gray box behind text */
+  color: #F5C78C;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Slight shadow around input */
+}
+
+.search-form input::placeholder {
+  color: #585757; /* Placeholder color for "Search with Google" text */
+  word-spacing: 2px;
+}
+
+/* Search Container with Engine Selector */
+.search-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Search Engine Selector */
+.search-engine-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-engine-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.search-engine-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-engine-toggle img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* Hide the dropdown arrow */
+.search-engine-toggle span {
+  display: none;
+}
+
+/* Horizontal search engine icons */
+.search-engine-dropdown {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(47, 47, 47, 0.85);
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width 0.25s cubic-bezier(0.42, 0, 0.58, 1), padding 0.25s cubic-bezier(0.42, 0, 0.58, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0;
+}
+
+.search-engine-dropdown.show {
+  display: flex;
+  max-width: 180px;
+  padding: 0 12px;
+}
+
+.search-engine-option {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 0 3px;
+}
+
+.search-engine-option:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+}
+
+.search-engine-option img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* Hide the engine text */
+.search-engine-option span {
+  display: none;
+}
+
+/* Light theme search styles */
+body.light-theme .search-form input {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.light-theme .search-form input::placeholder {
+  color: #999;
+}
+
+body.light-theme .search-engine-toggle span {
+  color: #333;
+}
+
+body.light-theme .search-engine-dropdown {
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+body.light-theme .search-engine-option:hover {
+  background-color: #e0e0e0;
+}
+
+body.light-theme .search-engine-option span {
+  color: #333;
+}
+
+/* Icon Links Row */
+.icon-links, .icon-links-middle, .icon-links1 {
+  display: flex;
+  gap: 3rem; /* Original gap size */
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90vw;
+  min-height: 65px; /* Keep this to ensure empty rows have space */
+  position: relative;
+}
+
+/* Individual Icons - Default Gray Color */
+.icon-links a img, .icon-links-middle a img, .icon-links1 a img {
+  width: 65px; /* Increased icon size */
+  height: 65px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  border-radius: 12px; /* Slightly rounded corners */
+  filter: grayscale(100%) brightness(60%); /* Default to gray */
+}
+
+/* Add slight scaling on hover for better interaction */
+.icon-links a:hover img, .icon-links-middle a:hover img, .icon-links1 a:hover img {
+  filter: none; /* Remove gray filter for all icons */
+  transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Edit Mode Styles */
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-edit-menu {
+  display: none;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: #1f1f1f;
+  border-radius: 4px;
+  padding: 5px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.icon-edit-menu button {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  margin: 3px 0;
+  background-color: #333;
+  color: #f5c78c;
+  border: none;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.icon-edit-menu button:hover {
+  background-color: #444;
+}
+
+.edit-mode .icon-container {
+  cursor: default;
+}
+
+.edit-mode .icon-container {
+  position: relative;
+}
+
+.edit-mode .icon-container .icon-edit-menu {
+  cursor: pointer;
+}
+
+.edit-mode .icon-container:hover .icon-edit-menu {
+  display: block;
+}
+
+/* Edit Toggle Button */
+.edit-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  z-index: 101; /* Ensure it stays above other controls */
+}
+
+.edit-toggle:hover {
+  background-color: #444;
+}
+
+.edit-mode .edit-toggle {
+  background-color: #f5c78c;
+  color: #333;
+}
+
+/* Add Icon Button */
+.add-icon {
+  position: fixed;
+  right: 80px; /* Changed from right: 20px to position it to the left of edit button */
+  bottom: 20px; /* Same vertical position as edit button */
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  display: none !important; /* Hidden by default - with !important flag */
+  opacity: 0; /* Start transparent */
+  transform: translateX(60px); /* Initial position - overlapping with edit button */
+  z-index: 100; /* Lower than edit button */
+}
+
+.edit-mode .add-icon {
+  display: flex !important; /* Show when in edit mode - with !important flag */
+  opacity: 1;
+  transform: translateX(0); /* Move to final position */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add smooth animation */
+}
+
+.add-icon:hover {
+  background-color: #444;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal display when shown */
+.modal[style*="display: block"] {
+  display: flex !important;
+}
+
+.modal-content {
+  background-color: #2a2a2a;
+  color: #f5c78c;
+  padding: 25px;
+  padding-bottom: 35px; /* Add extra padding at the bottom */
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #f5c78c;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #f5c78c;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #f5c78c;
+  outline: none;
+  box-shadow: 0 0 3px rgba(245, 199, 140, 0.3);
+}
+
+.upload-note {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.upload-note1 {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.save-icon {
+  background-color: #f5c78c;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.save-icon:hover {
+  background-color: #f8d6a4;
+}
+
+.save-icon:active {
+  transform: scale(0.98);
+}
+
+/* Notification Toast */
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: #333;
+  color: #f5c78c;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  font-size: 0.9rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.notification.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear;
+}
+
+.notification.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.notification.success {
+  border-left: 4px solid #58b368;
+}
+
+.notification.error {
+  border-left: 4px solid #e74c3c;
+}
+
+.notification.info {
+  border-left: 4px solid #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon-links, .icon-links-middle, .icon-links1 {
+    gap: 2rem;
+  }
+  
+  .icon-links a img, .icon-links-middle a img, .icon-links1 a img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .notification {
+    max-width: 90%;
+    font-size: 0.8rem;
+  }
+}
+
+/* Disabled select options */
+.form-group select option:disabled {
+  color: #666;
+  font-style: italic;
+  background-color: #2a2a2a;
+}
+
+/* Upload container for file input and Get Icon button */
+.upload-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Get Icon button styling */
+.get-icon-btn {
+  display: inline-block;
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+  text-align: center;
+  min-width: 80px;
+}
+
+.get-icon-btn:hover {
+  background-color: #4a4a4a;
+  color: #f5c78c;
+  text-decoration: none;
+}
+
+.get-icon-btn:active {
+  transform: scale(0.97);
+}
+
+/* Common button styling for control buttons */
+.control-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.control-btn:hover {
+  transform: scale(1.05);
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  right: 140px; /* Changed to position it to the left of add button */
+  bottom: 20px; /* Same vertical position as edit button */
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  display: none; /* Hidden by default */
+  opacity: 0; /* Start transparent */
+  transform: translateX(120px); /* Initial position - overlapping with edit button */
+  z-index: 100; /* Lower than edit button */
+}
+
+.edit-mode .theme-toggle {
+  display: flex; /* Show when in edit mode */
+  opacity: 1;
+  transform: translateX(0); /* Move to final position */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add smooth animation */
+}
+
+.theme-toggle:hover {
+  background-color: #444;
+}
+
+/* Light theme */
+body.light-theme {
+  background: #e0e0e0; /* Darker background - was #f0f0f0 */
+  color: #333;
+}
+
+/* Light theme header */
+body.light-theme h1 {
+  color: #333;
+}
+
+/* Light theme search box */
+body.light-theme .search-form input {
+  background-color: #eaeaea; /* Darker input - was #fff */
+  color: #333;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .search-form input::placeholder {
+  color: #999;
+}
+
+/* Light theme icons */
+body.light-theme .icon-links a img,
+body.light-theme .icon-links-middle a img,
+body.light-theme .icon-links1 a img {
+  filter: grayscale(100%) brightness(80%); /* Default to gray */
+}
+
+/* Light theme icon hover effects - make sure all icons have the same hover effect */
+body.light-theme .icon-links a:hover img,
+body.light-theme .icon-links-middle a:hover img,
+body.light-theme .icon-links1 a:hover img {
+  filter: none; /* Remove gray filter for all icons */
+  transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Light theme control buttons */
+body.light-theme .control-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .control-btn:hover {
+  background-color: #d0d0d0;
+}
+
+body.light-theme .edit-mode .edit-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Light theme add icon and theme toggle buttons */
+body.light-theme .edit-mode .add-icon,
+body.light-theme .edit-mode .theme-toggle {
+  display: flex;
+  background-color: #e0e0e0;
+  color: #333;
+  transform: translateX(0); /* Ensure they're in the correct position in light theme */
+}
+
+/* Light theme modal */
+body.light-theme .modal-content {
+  background-color: #e8e8e8; /* Darker modal - was #fff */
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .close-modal {
+  color: #333;
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group select {
+  background-color: #d8d8d8; /* Darker inputs - was #f5f5f5 */
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+body.light-theme .form-group input:focus,
+body.light-theme .form-group select:focus {
+  border-color: #333;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .upload-note {
+  color: #777;
+}
+
+body.light-theme .save-icon {
+  background-color: #333;
+  color: #fff;
+}
+
+body.light-theme .save-icon:hover {
+  background-color: #444;
+}
+
+/* Light theme get icon button */
+body.light-theme .get-icon-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+body.light-theme .get-icon-btn:hover {
+  background-color: #d0d0d0;
+  color: #333;
+}
+
+/* Light theme notification */
+body.light-theme .notification {
+  background-color: #e8e8e8; /* Darker notification - was #fff */
+  color: #333;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .notification.success {
+  border-left: 4px solid #4caf50;
+}
+
+body.light-theme .notification.error {
+  border-left: 4px solid #f44336;
+}
+
+body.light-theme .notification.info {
+  border-left: 4px solid #2196f3;
+}
+
+/* Light theme edit menu */
+body.light-theme .icon-edit-menu {
+  background-color: #d8d8d8; /* Darker menu - was #f5f5f5 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .icon-edit-menu button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+body.light-theme .icon-edit-menu button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Theme Grid Layout */
+.theme-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Reduced from 10px */
+  margin-top: 15px;
+  max-height: 70vh; /* Add max height */
+  overflow-y: auto; /* Enable scrolling if too many themes */
+  padding-right: 10px; /* Space for scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera in theme grid */
+.theme-grid::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Theme Option Container */
+.theme-option {
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px; /* Reduced from 40px */
+  padding: 0 8px; /* Reduced from 10px */
+  outline: none; /* Remove outline when clicking */
+}
+
+.theme-option:hover {
+  transform: scale(1.02);
+}
+
+.theme-option.active {
+  background-color: rgba(245, 199, 140, 0.2); /* Use background color instead of border */
+}
+
+/* Ensure no outlines or borders on focus/active states */
+.theme-option:focus, 
+.theme-option:active {
+  outline: none;
+  border-color: transparent;
+}
+
+/* Each theme option has three color circles */
+.theme-color-preview {
+  display: flex;
+  gap: 3px; /* Reduced from 5px */
+  margin-right: 10px; /* Reduced from 15px */
+}
+
+/* Color circles */
+.color-circle {
+  width: 16px; /* Reduced from 20px */
+  height: 16px; /* Reduced from 20px */
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Theme name */
+.theme-name {
+  font-size: 0.8rem; /* Reduced from 0.9rem */
+  white-space: nowrap;
+}
+
+/* Theme modal specific styles */
+.theme-modal-content {
+  max-width: 350px; /* Reduced from 400px */
+  transition: opacity 0.3s ease; /* Add fade transition */
+  padding-bottom: 15px; /* Add extra padding at the bottom for better scrolling */
+}
+
+/* Animation for theme modal */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.theme-modal-fadeout {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Dark Theme Styles */
+body.theme-dark {
+  background: #282828;
+  color: #F5C78C;
+}
+
+body.theme-dark .search-form input {
+  background-color: #2F2F2F;
+  color: #F5C78C;
+}
+
+body.theme-dark .control-btn {
+  background-color: #3a3a3a;
+  color: #f5c78c;
+}
+
+body.theme-dark .edit-mode .edit-toggle {
+  background-color: #f5c78c;
+  color: #333;
+}
+
+/* The 8 Additional Themes Based on Image */
+/* 8888 Theme */
+body.theme-8888 {
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+
+body.theme-8888 .search-form input {
+  background-color: #313244;
+  color: #cdd6f4;
+}
+
+body.theme-8888 h1 {
+  color: #f38ba8;
+}
+
+body.theme-8888 .control-btn {
+  background-color: #313244;
+  color: #f38ba8;
+}
+
+body.theme-8888 .edit-mode .edit-toggle {
+  background-color: #f38ba8;
+  color: #1e1e2e;
+}
+
+/* 80s after dark Theme */
+body.theme-80s-after-dark {
+  background: #181818;
+  color: #ff7edb;
+}
+
+body.theme-80s-after-dark .search-form input {
+  background-color: #282828;
+  color: #ff7edb;
+}
+
+body.theme-80s-after-dark h1 {
+  color: #ff7edb;
+}
+
+body.theme-80s-after-dark .control-btn {
+  background-color: #282828;
+  color: #ff7edb;
+}
+
+body.theme-80s-after-dark .edit-mode .edit-toggle {
+  background-color: #ff7edb;
+  color: #181818;
+}
+
+/* 9009 Theme */
+body.theme-9009 {
+  background: #c0c0c0;
+  color: #333333;
+}
+
+body.theme-9009 .search-form input {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+body.theme-9009 h1 {
+  color: #056652;
+}
+
+body.theme-9009 .control-btn {
+  background-color: #d3d3d3;
+  color: #056652;
+}
+
+body.theme-9009 .edit-mode .edit-toggle {
+  background-color: #056652;
+  color: #f0f0f0;
+}
+
+/* Aether Theme */
+body.theme-aether {
+  background: #101010;
+  color: #ff2e97;
+}
+
+body.theme-aether .search-form input {
+  background-color: #181818;
+  color: #ff2e97;
+}
+
+body.theme-aether h1 {
+  color: #ff2e97;
+}
+
+body.theme-aether .control-btn {
+  background-color: #181818;
+  color: #ff2e97;
+}
+
+body.theme-aether .edit-mode .edit-toggle {
+  background-color: #ff2e97;
+  color: #101010;
+}
+
+/* Aurora Theme */
+body.theme-aurora {
+  background: #01161F;
+  color: #3CEADC;
+}
+
+body.theme-aurora .search-form input {
+  background-color: #032734;
+  color: #3CEADC;
+}
+
+body.theme-aurora h1 {
+  color: #3CEADC;
+}
+
+body.theme-aurora .control-btn {
+  background-color: #032734;
+  color: #3CEADC;
+}
+
+body.theme-aurora .edit-mode .edit-toggle {
+  background-color: #3CEADC;
+  color: #01161F;
+}
+
+/* Beach Theme */
+body.theme-beach {
+  background: #FFD79B;
+  color: #604830;
+}
+
+body.theme-beach .search-form input {
+  background-color: #FFF1D6;
+  color: #604830;
+}
+
+body.theme-beach h1 {
+  color: #FF9A3C;
+}
+
+body.theme-beach .control-btn {
+  background-color: #FFF1D6;
+  color: #604830;
+}
+
+body.theme-beach .edit-mode .edit-toggle {
+  background-color: #FF9A3C;
+  color: #FFF1D6;
+}
+
+/* Blueberry Dark Theme */
+body.theme-blueberry-dark {
+  background: #212B42;
+  color: #9FAED6;
+}
+
+body.theme-blueberry-dark .search-form input {
+  background-color: #2B365B;
+  color: #9FAED6;
+}
+
+body.theme-blueberry-dark h1 {
+  color: #6377BD;
+}
+
+body.theme-blueberry-dark .control-btn {
+  background-color: #2B365B;
+  color: #6377BD;
+}
+
+body.theme-blueberry-dark .edit-mode .edit-toggle {
+  background-color: #6377BD;
+  color: #212B42;
+}
+
+/* Light Theme (original) renamed to match the theme pattern */
+body.theme-light {
+  background: #e0e0e0;
+  color: #333;
+}
+
+body.theme-light h1 {
+  color: #333;
+}
+
+body.theme-light .search-form input {
+  background-color: #eaeaea;
+  color: #333;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .search-form input::placeholder {
+  color: #999;
+}
+
+body.theme-light .control-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .control-btn:hover {
+  background-color: #d0d0d0;
+}
+
+body.theme-light .edit-mode .edit-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Theme modal specific styles */
+.theme-modal-content {
+  max-width: 400px;
+}
+
+/* Color circles */
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Additional theme styles for the new themes */
+
+/* Dracula Theme */
+body.theme-dracula {
+  background: #282a36;
+  color: #f8f8f2;
+}
+
+body.theme-dracula .search-form input {
+  background-color: #44475a;
+  color: #f8f8f2;
+}
+
+body.theme-dracula h1 {
+  color: #ff79c6;
+}
+
+body.theme-dracula .control-btn {
+  background-color: #44475a;
+  color: #ff79c6;
+}
+
+body.theme-dracula .edit-mode .edit-toggle {
+  background-color: #ff79c6;
+  color: #282a36;
+}
+
+/* Nord Theme */
+body.theme-nord {
+  background: #2e3440;
+  color: #eceff4;
+}
+
+body.theme-nord .search-form input {
+  background-color: #3b4252;
+  color: #eceff4;
+}
+
+body.theme-nord h1 {
+  color: #88c0d0;
+}
+
+body.theme-nord .control-btn {
+  background-color: #3b4252;
+  color: #88c0d0;
+}
+
+body.theme-nord .edit-mode .edit-toggle {
+  background-color: #88c0d0;
+  color: #2e3440;
+}
+
+/* Solarized Dark Theme */
+body.theme-solarized-dark {
+  background: #002b36;
+  color: #839496;
+}
+
+body.theme-solarized-dark .search-form input {
+  background-color: #073642;
+  color: #839496;
+}
+
+body.theme-solarized-dark h1 {
+  color: #268bd2;
+}
+
+body.theme-solarized-dark .control-btn {
+  background-color: #073642;
+  color: #268bd2;
+}
+
+body.theme-solarized-dark .edit-mode .edit-toggle {
+  background-color: #268bd2;
+  color: #002b36;
+}
+
+/* Solarized Light Theme */
+body.theme-solarized-light {
+  background: #fdf6e3;
+  color: #657b83;
+}
+
+body.theme-solarized-light .search-form input {
+  background-color: #eee8d5;
+  color: #657b83;
+}
+
+body.theme-solarized-light h1 {
+  color: #cb4b16;
+}
+
+body.theme-solarized-light .control-btn {
+  background-color: #eee8d5;
+  color: #cb4b16;
+}
+
+body.theme-solarized-light .edit-mode .edit-toggle {
+  background-color: #cb4b16;
+  color: #fdf6e3;
+}
+
+/* Gruvbox Theme */
+body.theme-gruvbox {
+  background: #282828;
+  color: #ebdbb2;
+}
+
+body.theme-gruvbox .search-form input {
+  background-color: #3c3836;
+  color: #ebdbb2;
+}
+
+body.theme-gruvbox h1 {
+  color: #fe8019;
+}
+
+body.theme-gruvbox .control-btn {
+  background-color: #3c3836;
+  color: #fe8019;
+}
+
+body.theme-gruvbox .edit-mode .edit-toggle {
+  background-color: #fe8019;
+  color: #282828;
+}
+
+/* Monokai Theme */
+body.theme-monokai {
+  background: #272822;
+  color: #f8f8f2;
+}
+
+body.theme-monokai .search-form input {
+  background-color: #3e3d32;
+  color: #f8f8f2;
+}
+
+body.theme-monokai h1 {
+  color: #f92672;
+}
+
+body.theme-monokai .control-btn {
+  background-color: #3e3d32;
+  color: #f92672;
+}
+
+body.theme-monokai .edit-mode .edit-toggle {
+  background-color: #f92672;
+  color: #272822;
+}
+
+/* Tokyo Night Theme */
+body.theme-tokyo-night {
+  background: #1a1b26;
+  color: #a9b1d6;
+}
+
+body.theme-tokyo-night .search-form input {
+  background-color: #24283b;
+  color: #a9b1d6;
+}
+
+body.theme-tokyo-night h1 {
+  color: #7aa2f7;
+}
+
+body.theme-tokyo-night .control-btn {
+  background-color: #24283b;
+  color: #7aa2f7;
+}
+
+body.theme-tokyo-night .edit-mode .edit-toggle {
+  background-color: #7aa2f7;
+  color: #1a1b26;
+}
+
+/* GitHub Dark Theme */
+body.theme-github-dark {
+  background: #0d1117;
+  color: #c9d1d9;
+}
+
+body.theme-github-dark .search-form input {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+
+body.theme-github-dark h1 {
+  color: #58a6ff;
+}
+
+body.theme-github-dark .control-btn {
+  background-color: #161b22;
+  color: #58a6ff;
+}
+
+body.theme-github-dark .edit-mode .edit-toggle {
+  background-color: #58a6ff;
+  color: #0d1117;
+}
+
+/* Material Theme */
+body.theme-material {
+  background: #263238;
+  color: #eeffff;
+}
+
+body.theme-material .search-form input {
+  background-color: #37474f;
+  color: #eeffff;
+}
+
+body.theme-material h1 {
+  color: #89DDFF;
+}
+
+body.theme-material .control-btn {
+  background-color: #37474f;
+  color: #89DDFF;
+}
+
+body.theme-material .edit-mode .edit-toggle {
+  background-color: #89DDFF;
+  color: #263238;
+}
+
+/* Synthwave Theme */
+body.theme-synthwave {
+  background: #241b2f;
+  color: #f0eff1;
+}
+
+body.theme-synthwave .search-form input {
+  background-color: #36254e;
+  color: #f0eff1;
+}
+
+body.theme-synthwave h1 {
+  color: #ff7edb;
+}
+
+body.theme-synthwave .control-btn {
+  background-color: #36254e;
+  color: #ff7edb;
+}
+
+body.theme-synthwave .edit-mode .edit-toggle {
+  background-color: #ff7edb;
+  color: #241b2f;
+}
+
+/* Green Mint Theme */
+body.theme-green-mint {
+  background: #0b2027;
+  color: #cdedf6;
+}
+
+body.theme-green-mint .search-form input {
+  background-color: #40798c;
+  color: #cdedf6;
+}
+
+body.theme-green-mint h1 {
+  color: #70a9a1;
+}
+
+body.theme-green-mint .control-btn {
+  background-color: #40798c;
+  color: #70a9a1;
+}
+
+body.theme-green-mint .edit-mode .edit-toggle {
+  background-color: #70a9a1;
+  color: #0b2027;
+}
+
+/* Clock and Date Display */
+.clock-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+#clock {
+  font-size: 2rem;
+  color: #F5C78C;
+  margin-bottom: 0.2rem;
+}
+
+#date {
+  font-size: 1rem;
+  color: #9d8164;
+}
+
+body.light-theme .clock-container #clock {
+  color: #333;
+}
+
+body.light-theme .clock-container #date {
+  color: #666;
+}
+
+/* Keyboard Shortcuts Modal */
+.shortcuts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.shortcuts-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shortcuts-table tr:last-child {
+  border-bottom: none;
+}
+
+.shortcuts-table td {
+  padding: 8px 5px;
+}
+
+.shortcuts-table .key-cell {
+  width: 120px;
+  color: #F5C78C;
+  font-weight: bold;
+}
+
+body.light-theme .shortcuts-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .shortcuts-table .key-cell {
+  color: #333;
+}
+
+/* Theme-specific date/time styles */
+body.theme-dark #date-time,
+body.theme-8888 #date-time,
+body.theme-80s-after-dark #date-time,
+body.theme-aether #date-time,
+body.theme-aurora #date-time,
+body.theme-blueberry-dark #date-time,
+body.theme-dracula #date-time,
+body.theme-nord #date-time,
+body.theme-solarized-dark #date-time,
+body.theme-gruvbox #date-time,
+body.theme-monokai #date-time,
+body.theme-tokyo-night #date-time,
+body.theme-github-dark #date-time,
+body.theme-material #date-time,
+body.theme-synthwave #date-time,
+body.theme-green-mint #date-time {
+  color: #F5C78C; /* Bright color for dark themes */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover states for dark themes */
+body.theme-dark .datetime-container:hover #date-time,
+body.theme-8888 .datetime-container:hover #date-time,
+body.theme-80s-after-dark .datetime-container:hover #date-time,
+body.theme-aether .datetime-container:hover #date-time,
+body.theme-aurora .datetime-container:hover #date-time,
+body.theme-blueberry-dark .datetime-container:hover #date-time,
+body.theme-dracula .datetime-container:hover #date-time,
+body.theme-nord .datetime-container:hover #date-time,
+body.theme-solarized-dark .datetime-container:hover #date-time,
+body.theme-gruvbox .datetime-container:hover #date-time,
+body.theme-monokai .datetime-container:hover #date-time,
+body.theme-tokyo-night .datetime-container:hover #date-time,
+body.theme-github-dark .datetime-container:hover #date-time,
+body.theme-material .datetime-container:hover #date-time,
+body.theme-synthwave .datetime-container:hover #date-time,
+body.theme-green-mint .datetime-container:hover #date-time {
+  color: #d8a970; /* Slightly darker when hovering */
+  opacity: 0.9;
+}
+
+/* Light theme overrides */
+body.theme-light #date-time,
+body.theme-9009 #date-time,
+body.theme-beach #date-time,
+body.theme-solarized-light #date-time {
+  color: #333; /* Dark color for light themes */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover states for light themes */
+body.theme-light .datetime-container:hover #date-time,
+body.theme-9009 .datetime-container:hover #date-time,
+body.theme-beach .datetime-container:hover #date-time,
+body.theme-solarized-light .datetime-container:hover #date-time {
+  color: #111; /* Even darker when hovering */
+}
+
+/* Theme-specific date/time container backgrounds */
+body.theme-dark .datetime-container,
+body.theme-8888 .datetime-container,
+body.theme-80s-after-dark .datetime-container,
+body.theme-aether .datetime-container,
+body.theme-aurora .datetime-container,
+body.theme-blueberry-dark .datetime-container,
+body.theme-dracula .datetime-container,
+body.theme-nord .datetime-container,
+body.theme-solarized-dark .datetime-container,
+body.theme-gruvbox .datetime-container,
+body.theme-monokai .datetime-container,
+body.theme-tokyo-night .datetime-container,
+body.theme-github-dark .datetime-container,
+body.theme-material .datetime-container,
+body.theme-synthwave .datetime-container,
+body.theme-green-mint .datetime-container {
+  background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent black for dark themes */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hover states for dark theme containers */
+body.theme-dark .datetime-container:hover,
+body.theme-8888 .datetime-container:hover,
+body.theme-80s-after-dark .datetime-container:hover,
+body.theme-aether .datetime-container:hover,
+body.theme-aurora .datetime-container:hover,
+body.theme-blueberry-dark .datetime-container:hover,
+body.theme-dracula .datetime-container:hover,
+body.theme-nord .datetime-container:hover,
+body.theme-solarized-dark .datetime-container:hover,
+body.theme-gruvbox .datetime-container:hover,
+body.theme-monokai .datetime-container:hover,
+body.theme-tokyo-night .datetime-container:hover,
+body.theme-github-dark .datetime-container:hover,
+body.theme-material .datetime-container:hover,
+body.theme-synthwave .datetime-container:hover,
+body.theme-green-mint .datetime-container:hover {
+  background-color: rgba(0, 0, 0, 0.35); /* Slightly more visible on hover */
+}
+
+/* Light theme container overrides */
+body.theme-light .datetime-container,
+body.theme-9009 .datetime-container,
+body.theme-beach .datetime-container,
+body.theme-solarized-light .datetime-container {
+  background-color: rgba(255, 255, 255, 0.15); /* Very transparent white for light themes */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hover states for light theme containers */
+body.theme-light .datetime-container:hover,
+body.theme-9009 .datetime-container:hover,
+body.theme-beach .datetime-container:hover,
+body.theme-solarized-light .datetime-container:hover {
+  background-color: rgba(255, 255, 255, 0.25); /* Slightly more visible on hover */
+}
+
+/* Custom Background Image */
+body.has-bg-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Add a subtle overlay when using custom background to ensure text remains readable */
+body.has-bg-image:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for readability */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Background image input in theme modal */
+.bg-image-container {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-image-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.bg-image-container .section-title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f5c78c;
+  border-bottom: 1px solid rgba(245, 199, 140, 0.3);
+  padding-bottom: 5px;
+}
+
+.bg-image-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.bg-image-btn {
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+  flex: 1;
+}
+
+.bg-image-btn:hover {
+  background-color: #4a4a4a;
+}
+
+.bg-image-btn:active {
+  transform: scale(0.97);
+}
+
+.bg-image-btn.remove {
+  background-color: #5a3a3a;
+  display: none; /* Hidden by default */
+}
+
+.has-bg-image .bg-image-btn.remove {
+  display: block; /* Show when background image is active */
+}
+
+.bg-image-btn.remove:hover {
+  background-color: #703a3a;
+}
+
+/* Color theme section */
+.color-themes-container {
+  margin-top: 10px;
+}
+
+.color-themes-container .section-title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f5c78c;
+  border-bottom: 1px solid rgba(245, 199, 140, 0.3);
+  padding-bottom: 5px;
+}
+
+/* Disabled themes when background image is active */
+.has-bg-image .theme-option {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.has-bg-image .color-themes-container .section-title {
+  color: #888;
+}
+
+/* Light theme overrides */
+body.light-theme .bg-image-container .section-title,
+body.light-theme .color-themes-container .section-title {
+  color: #333;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+body.light-theme.has-bg-image .color-themes-container .section-title {
+  color: #888;
+}
+
+/* Custom file input styling */
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a3a3a;
+  color: #f5c78c;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.file-input-label:hover {
+  background-color: #4a4a4a;
+}
+
+/* Light theme overrides for background image controls */
+body.light-theme .bg-image-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .bg-image-btn {
+  background-color: #d0d0d0;
+  color: #333;
+}
+
+body.light-theme .bg-image-btn:hover {
+  background-color: #c0c0c0;
+}
+
+body.light-theme .bg-image-btn.remove {
+  background-color: #e0c0c0;
+}
+
+body.light-theme .bg-image-btn.remove:hover {
+  background-color: #d0a0a0;
+}
+
+body.light-theme .file-input-label {
+  background-color: #d0d0d0;
+  color: #333;
+}
+
+body.light-theme .file-input-label:hover {
+  background-color: #c0c0c0;
+} 
