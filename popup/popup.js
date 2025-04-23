@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // GitHub button click handler
   githubBtn.addEventListener('click', function() {
     // This will be updated with the actual GitHub repo URL
-    browser.tabs.create({ url: "https://github.com/user/fistome-extension" });
+    browser.tabs.create({ url: "https://github.com/siam404/Fistome.git" });
   });
   
   // Help button click handler
