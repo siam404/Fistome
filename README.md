@@ -1,8 +1,10 @@
 # FISTOME
 
-A customizable Extension- smooth, minimalistic, clean and with some built-in feature, only for Firefox and Librewolf.
+A customizable Extension- smooth, minimalistic, clean and with some built-in feature, only for Firefox-based browser
 
 <img src="https://github.com/user-attachments/assets/ae0269b8-5bb0-406d-8318-ccb89a5a7d03" alt="Image 1" width="400">
+
+Add to Your Firefox-based browser - [Extension](https://addons.mozilla.org/addon/fistome)
 
 ## Features
 
